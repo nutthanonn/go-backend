@@ -1,3 +1,6 @@
 # Golang Server
 
-<img src="./assets/go-logo.png" align="center">
+<p align="center">
+<img src="./assets/go-logo.png" align="center" width="100" >
+
+</p>
