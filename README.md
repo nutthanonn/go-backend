@@ -1,1 +1,4 @@
 # Golang server
+
+- gin
+- gorm
