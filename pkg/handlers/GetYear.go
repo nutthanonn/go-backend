@@ -10,7 +10,7 @@ import (
 func (h *handlers) GetYear(context *gin.Context) {
 	var year []models.Year
 
-	if result := h.DB.Find(&year); result.Error != nil {
+	if result := h.DB.Table("year").Select("year_name").Scan(&year); result.Error != nil {
 		context.JSON(http.StatusNotFound, gin.H{
 			"message": result.Error,
 		})
