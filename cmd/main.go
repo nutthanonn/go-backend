@@ -12,6 +12,6 @@ func main() {
 	router := gin.Default()
 
 	router.GET("year", h.GetYear)
+	router.POST("year", h.CreateYear)
 	router.Run("localhost:8000")
-
 }
