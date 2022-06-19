@@ -8,14 +8,14 @@ import (
 )
 
 func (h *handlers) GetYear(context *gin.Context) {
-	var years []models.Year
+	var year []models.Year
 
-	if result := h.DB.Find(&years); result.Error != nil {
+	if result := h.DB.Find(&year); result.Error != nil {
 		context.JSON(http.StatusNotFound, gin.H{
 			"message": result.Error,
 		})
 		return
 	}
 
-	context.JSON(http.StatusOK, &years)
+	context.JSON(http.StatusOK, &year)
 }
