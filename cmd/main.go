@@ -11,8 +11,10 @@ func main() {
 	h := handlers.New(DB)
 	router := gin.Default()
 
+	router.GET("product/:id", h.GetProduct)
 	router.POST("product_type", h.CreateProductType)
-	router.GET("product_type", h.GetProductType)
 	router.POST("product", h.CreateProduct)
+	router.PUT("product/:id", h.UpdateProduct)
+	router.DELETE("product/:id", h.DeleteProduct)
 	router.Run("localhost:8000")
 }
