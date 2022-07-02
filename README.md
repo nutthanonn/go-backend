@@ -18,7 +18,7 @@ DB_NAME=
 ```
 git clone https://github.com/nutthanonn/go-backend.git
 
-cd cmd
+cd go-backend/cmd
 go run main.go
 
 ```
