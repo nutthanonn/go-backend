@@ -35,7 +35,15 @@ func Init() *gorm.DB {
 		log.Fatal(err)
 	}
 
-	db.AutoMigrate(&models.Product_type{}, &models.Product{})
+	db.AutoMigrate(
+		&models.Product_types{},
+		&models.Users{},
+		&models.Products{},
+		&models.Departments{},
+		&models.Employees{},
+		&models.Transections{},
+		&models.Transections_Products{},
+	)
 
 	return db
 
