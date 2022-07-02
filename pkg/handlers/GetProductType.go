@@ -8,7 +8,7 @@ import (
 )
 
 func (h *handlers) GetProductType(context *gin.Context) {
-	var product_type []models.Product_type
+	var product_type []models.Product_types
 
 	if result := h.DB.Table("product_types").Select("*").Scan(&product_type); result.Error != nil {
 		context.JSON(http.StatusNotFound, gin.H{

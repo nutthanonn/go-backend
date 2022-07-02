@@ -9,7 +9,7 @@ import (
 )
 
 func (h *handlers) CreateProductType(context *gin.Context) {
-	var product_type models.Product_type
+	var product_type models.Product_types
 	product_type.Create_at = time.Now()
 	product_type.Update_at = time.Now()
 

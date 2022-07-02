@@ -8,7 +8,7 @@ import (
 )
 
 func (h *handlers) GetProduct(context *gin.Context) {
-	var product []models.Product
+	var product []models.Products
 
 	if result := h.DB.Table("products").Select("product_name").Scan(&product); result.Error != nil {
 		context.JSON(http.StatusNotFound, gin.H{
