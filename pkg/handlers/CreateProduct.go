@@ -10,17 +10,18 @@ import (
 
 func (h *handlers) CreateProduct(context *gin.Context) {
 	var product models.Products
-	product.Create_at = time.Now()
-	product.Update_at = time.Now()
 
 	if err := context.ShouldBindJSON(&product); err != nil {
 		context.JSON(http.StatusBadRequest, gin.H{"message": "Error"})
 		return
 	}
 
-	if result := h.DB.Table("products").Create(&product); result.Error != nil {
+	product.Update_at = time.Now()
+	product.Create_at = time.Now()
+
+	if result := h.DB.Create(&product); result.Error != nil {
 		context.JSON(http.StatusInternalServerError, gin.H{
-			"error": result.Error.Error(),
+			"error": result.Error,
 		})
 		return
 	}
